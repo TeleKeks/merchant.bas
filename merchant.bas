@@ -336,9 +336,9 @@
  3360  PRINT CHR$(27) + "[38;5;28m" + TAB$(3) + "                              Press Enter                           "
  3370  INPUT DUMPP$
  3380  PRINT CHR$(27) + "[38;5;214m"
- 3390  PRINT "  After over 400 years of peace the Voteron Kingdom was attacked by adragon.  "
+ 3390  PRINT "  After over 400 years of peace, the Voteron Kingdom was attacked by a dragon.  "
  3400  PRINT "The dreadful beast destroyed a few cities and flee to mountains in northeastern"
- 3410  PRINT "  part of country.Several warriors, wizards and other heroes tried to kill    "
+ 3410  PRINT "  part of country. Several warriors, wizards and other heroes tried to kill    "
  3420  PRINT "the dragon in its lair, but failed. The king of Voteron offered half a million "
  3430  PRINT "  gold pieces for slaying the dragon. You never considered yourself a hero,    "
  3440  PRINT "but you always loved money, so you decided to do it. You aren't powerful enough"
@@ -593,7 +593,7 @@
  5930  IF GOODSCHOICE$ = "CO" OR GOODSCHOICE$ = "C" THEN PRINT "A merchant asks you: cotton or copper ore, dear sir?" : GOTO 5960
  5940  IF GOODSCHOICE$ = "F" THEN PRINT "A merchant asks you: fish or furs, dear sir?" : GOTO 5960
  5950  NEXT I
- 5960  IF GOODSCHOICENR = 13 THEN PRINT "Please enter the valid goods name or number." : GOTO 5840
+ 5960  IF GOODSCHOICENR = 13 THEN PRINT "Please enter the a valid good's name or number." : GOTO 5840
  5970  IF GOLD = 0 THEN PRINT "You don't have money to buy anything!" : GOTO 5750
  5980  AFFORDGOODS = 0
  5990  IF GOODSCHOICENR = 0 THEN AFFORDGOODS = INT(GOLD / BEER(CURRENTCITY))
@@ -612,7 +612,7 @@
  6120  PRINT "How many units? You can afford up to " + STR$(AFFORDGOODS) + "."
  6130  INPUT UNITSCHOICE$
  6140  IF VAL(UNITSCHOICE$) < 0 THEN PRINT "No, that's a dumb idea. You can't buy a negative number of goods." : GOTO 6120
- 6150  IF VAL(UNITSCHOICE$) = 0 THEN PRINT "You decide to not buy." : GOTO 5750
+ 6150  IF VAL(UNITSCHOICE$) = 0 THEN PRINT "You decide against buying anything for the time being." : GOTO 5750
  6160  IF VAL(UNITSCHOICE$) > AFFORDGOODS THEN PRINT "You don't have enough money to buy " + UNITSCHOICE$ + " units." : GOTO 6120
  6170  IF VAL(UNITSCHOICE$)*GOODSWEIGHT(GOODSCHOICENR) + CAPACITY > MAXCAPACITY THEN PRINT "That's too heavy! You need to hire more workers to carry the goods." : GOTO 6120
  6180  IF VAL(UNITSCHOICE$) > 1 THEN PRINT "You buy " + UNITSCHOICE$ + " units." : GOTO 6210
@@ -684,10 +684,10 @@
  6840  REM
  6850  REM Renting a room
  6860  IF GOLD < 20 + 2*PEOPLE THEN Print "You can't afford to rent a room." : GOTO 6740
- 6870  IF PEOPLE = O THEN PRINT "You rent a room. You pay 20 gold pieces."
- 6880  IF PEOPLE = 1 THEN PRINT "You rent a room for you and your employee. You pay 22 gold pieces."
- 6890  IF PEOPLE > 5 THEN PRINT "You rent rooms for you and your " + STR$(PEOPLE) + " people. You pay " + STR$(20+2*PEOPLE) + " gold pieces."
- 6900  IF PEOPLE > 1 AND PEOPLE < 6 THEN PRINT "You rent a room for you and your " + STR$(PEOPLE) + " people. You pay " + STR$(20+2*PEOPLE) + " gold pieces."
+ 6870  IF PEOPLE = O THEN PRINT "You rent a room and pay 20 gold pieces."
+ 6880  IF PEOPLE = 1 THEN PRINT "You rent a room for you and your employee and pay 22 gold pieces."
+ 6890  IF PEOPLE > 5 THEN PRINT "You rent rooms for you and your " + STR$(PEOPLE) + " people, and you pay " + STR$(20+2*PEOPLE) + " gold pieces."
+ 6900  IF PEOPLE > 1 AND PEOPLE < 6 THEN PRINT "You rent a room for you and your " + STR$(PEOPLE) + " people, paying " + STR$(20+2*PEOPLE) + " gold pieces."
  6910  GOLD = GOLD - (20+PEOPLE*2)
  6920  HP = MAXHP
  6930  PRINT "You wake up refreshed." : GOTO 6740
@@ -1047,7 +1047,7 @@
 10470  IF CAVECHOICE$ = "NO" OR CAVECHOICE$ = "N" THEN PRINT "You return to the main road. " : RETURN
 10480  IF CAVECHOICE$ <> "N" AND CAVECHOICE$ <> "NO" AND CAVECHOICE$ <> "Y" AND CAVECHOICE$ <> "YES" THEN GOTO 10440
 10490  IF CAVECHOICE$ = "Y" OR CAVECHOICE$ = "YES" THEN PRINT "You decide to enter. Inside the cave you meet an old man in red robes. He says:"
-10500  PRINT "'It's dangerous to go alone, take this!'"
+10500  PRINT "'It's dangerous to go in alone. Take this!'"
 10510  PRINT "The old man gives you a short sword."
 10520  WEAPON$ = "short sword"
 10530  RETURN
@@ -1055,7 +1055,7 @@
 10550  REM Dice roll 2
 10560  IF MAXCAPACITY-CAPACITY < 15 THEN RETURN
 10570  TOODSROLL = FND(4) + 1
-10580  PRINT "You find " + STR$(TOODSROLL) + " fresh toods."
+10580  PRINT "You find " + STR$(TOODSROLL) + " fresh toods. Yuck."
 10590  GOODS(4) = GOODS(4) + TOODSROLL
 10600  RETURN
 10610  REM
