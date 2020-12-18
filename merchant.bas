@@ -315,7 +315,7 @@
  3150  NEXT I
  3160  CLS
  3170  PRINT CHR$(27) + "[38;5;28m" + TAB$(3) + "                     Programmed in TeleBASIC by Keks                 "
- 3175  PRINT CHR$(27) + "[38;5;28m" + TAB$(3) + "                        Minor Improvements by ZCJ                    "
+ 3175  PRINT CHR$(27) + "[38;5;28m" + TAB$(3) + "                       Minor  Improvements  by  ZCJ                  "
  3180  PRINT CHR$(27) + "[38;5;142m"
  3190  PRINT ""
  3200  PRINT ""
@@ -593,7 +593,7 @@
  5920  IF GOODSCHOICE$ = "CO" OR GOODSCHOICE$ = "C" THEN PRINT "A merchant asks you: cotton or copper ore, dear sir?" : GOTO 5950
  5930  IF GOODSCHOICE$ = "F" THEN PRINT "A merchant asks you: fish or furs, dear sir?" : GOTO 5950
  5940  NEXT I
- 5950  IF GOODSCHOICENR = 13 THEN PRINT "Please enter the valid goods name or number." : GOTO 5830
+ 5950  IF GOODSCHOICENR = 13 THEN PRINT "Please enter a valid good's name or number." : GOTO 5830
  5960  IF GOLD = 0 THEN PRINT "You don't have money to buy anything!" : GOTO 5740
  5970  AFFORDGOODS = 0
  5980  IF GOODSCHOICENR = 0 THEN AFFORDGOODS = INT(GOLD / BEER(CURRENTCITY))
@@ -613,7 +613,7 @@
  6120  INPUT UNITSCHOICE$
  6130  IF VAL(UNITSCHOICE$) < 0 THEN PRINT "No, that's a dumb idea. You can't buy a negative number of goods." : GOTO 6110
  6140  IF VAL(UNITSCHOICE$) = 0 THEN PRINT "You decide to not buy." : GOTO 5740
- 6150  IF VAL(UNITSCHOICE$) > AFFORDGOODS THEN PRINT "You don't have enough money to buy " + UNITSCHOICE$ + " units." : GOTO 6110
+ 6150  IF VAL(UNITSCHOICE$) > AFFORDGOODS THEN PRINT "You don't have enough gold to buy " + UNITSCHOICE$ + " units." : GOTO 6110
  6160  IF VAL(UNITSCHOICE$)*GOODSWEIGHT(GOODSCHOICENR) + CAPACITY > MAXCAPACITY THEN PRINT "That's too heavy! You need to hire more workers to carry the goods." : GOTO 6110
  6170  IF VAL(UNITSCHOICE$) > 1 THEN PRINT "You buy " + UNITSCHOICE$ + " units." : GOTO 6200
  6180  IF VAL(UNITSCHOICE$) = 1 THEN PRINT "You buy one unit." : GOTO 6200
@@ -645,7 +645,7 @@
  6440  IF GOODSCHOICE$ = "CO" OR GOODSCHOICE$ = "C" THEN PRINT "A merchant asks you: cotton or copper ore, dear sir?" : GOTO 6470
  6450  IF GOODSCHOICE$ = "F" THEN PRINT "A merchant asks you: fish or furs, dear sir?" : GOTO 6470
  6460  NEXT I
- 6470  IF GOODSCHOICENR = 13 THEN PRINT "Please enter the valid goods name or number." : GOTO 6350
+ 6470  IF GOODSCHOICENR = 13 THEN PRINT "Please enter a valid good's name or number." : GOTO 6350
  6480  IF GOODS(GOODSCHOICENR) = 0 THEN PRINT "You don't have any " + GOODSNAME$(GOODSCHOICENR) + "!": GOTO 5740
  6490  PRINT "How many units you want to sell? You have " + STR$(GOODS(GOODSCHOICENR)) + "."
  6500  INPUT UNITSCHOICE$
@@ -694,8 +694,8 @@
  6930  REM
  6940  REM Hiring workers
  6950  IF GOLD < WORKERSPRICE(CURRENTCITY) THEN PRINT "You don't have enough money to hire even one worker!" : GOTO 6730
- 6960  IF WORKERS = 50 THEN PRINT "You already employ maximum number of workers." : GOTO 6730
- 6970  PRINT "The cost is " + STR$(WORKERSPRICE(CURRENTCITY)) + " gold pieces per employee. How many workers do you want to hire?"
+ 6960  IF WORKERS = 50 THEN PRINT "You already employ the maximum number of workers one can employ." : GOTO 6730
+ 6970  PRINT "The cost is " + STR$(WORKERSPRICE(CURRENTCITY)) + " gold pieces per employee. How many workers would you like to hire?"
  6980  INPUT HOWMANYWORKERS$
  6990  IF VAL(HOWMANYWORKERS$) = 0 THEN PRINT "You decide to not hire anybody." : GOTO 6730
  7000  IF VAL(HOWMANYWORKERS$) < 0 THEN PRINT "Please enter a positive number." : GOTO 6970
@@ -712,7 +712,7 @@
  7110  REM
  7120  REM Hiring mercenaries
  7130  IF GOLD < MERCPRICE(CURRENTCITY) THEN PRINT "You don't have enough money to hire even one mercenary!" : GOTO 6730
- 7140  IF MERCENARIES = 50 THEN PRINT "You already employ maximum number of mercenaries." : GOTO 6730
+ 7140  IF MERCENARIES = 50 THEN PRINT "You already employ the maximum number of mercenaries." : GOTO 6730
  7150  PRINT "The cost is " + STR$(MERCPRICE(CURRENTCITY)) + " gold pieces per employee. How many mercenaries do you want to hire?"
  7160  INPUT HOWMANYWORKERS$
  7170  IF VAL(HOWMANYWORKERS$) = 0 THEN PRINT "You decide to not hire anybody." : GOTO 6730
@@ -869,7 +869,7 @@
  8680  NEXT I
  8690  WORKERS = 0
  8700  CAPACITY = 0
- 8710  IF MAGES = 1 THEN PRINT "Your mage looks at you with disfavor."
+ 8710  IF MAGES = 1 THEN PRINT "Your mage looks at you with dsfavor."
  8720  DICEROLL3 = FND(10)
  8730  IF DICEROLL3 = 10 AND MAGES = 1 THEN PRINT "Your mage says 'I don't wanna travel with such coward as you' and leaves you." : MAGES = 0
  8740  IF MERCENARIES > 1 THEN PRINT "Your mercenaries are upset with you for your decision."
