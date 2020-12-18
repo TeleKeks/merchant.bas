@@ -300,21 +300,21 @@
  3000  MMAP$(46)=A$+A$+A$+A$+A$+B$+B$+B$+B$+B$+B$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+D$+D$+A$+A$+A$+B$+B$+B$+B$+B$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+H$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$
  3010  MMAP$(47)=A$+A$+A$+A$+A$+A$+B$+B$+B$+B$+B$+B$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+D$+D$+D$+A$+A$+A$+B$+B$+B$+B$+B$+B$+B$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+H$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$
  3020  REM Adding colors to map - too slow to do it every time
- 3030  REM FOR I = 0 TO 47
- 3040  REM  FOR J = 1 TO 80
- 3050  REM   X$ = MID$(MAP$(I),J,1)
- 3060  REM   IF X$ = "." THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;076m" + X$
- 3070  REM   IF X$ = "t" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;023m" + X$
- 3080  REM   IF X$ = "#" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;094m" + X$
- 3090  REM   IF X$ = "~" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;051m" + X$
- 3100  REM   IF X$ = "O" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;088m" + X$
- 3110  REM   IF X$ = "^" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;240m" + X$
- 3120  REM   IF X$ = "D" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;142m" + X$
- 3130  REM   IF X$ = "," THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;222m" + "."
- 3140  REM  NEXT J
- 3150  REM NEXT I
+ 3030  FOR I = 0 TO 47
+ 3040  FOR J = 1 TO 80
+ 3050  X$ = MID$(MAP$(I),J,1)
+ 3060  IF X$ = "." THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;076m" + X$
+ 3070  IF X$ = "t" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;023m" + X$
+ 3080  IF X$ = "#" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;094m" + X$
+ 3090  IF X$ = "~" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;051m" + X$
+ 3100  IF X$ = "O" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;088m" + X$
+ 3110  IF X$ = "^" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;240m" + X$
+ 3120  IF X$ = "D" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;142m" + X$
+ 3130  IF X$ = "," THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;222m" + "."
+ 3140  NEXT J
+ 3150  NEXT I
  3160  CLS
- 3170  PRINT CHR$(27) + "[38;5;28m" + TAB$(3) + "                     Programmed in TeleBASIC by Keks                  "
+ 3170  PRINT CHR$(27) + "[38;5;28m" + TAB$(3) + "                     Programmed in TeleBASIC by Keks                 "
  3180  PRINT CHR$(27) + "[38;5;142m"
  3190  PRINT ""
  3200  PRINT ""
