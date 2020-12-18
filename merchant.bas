@@ -299,7 +299,7 @@
  2990  MMAP$(45)=A$+A$+A$+A$+B$+B$+B$+B$+B$+B$+B$+B$+B$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+B$+B$+B$+A$+A$+D$+D$+D$+D$+B$+B$+B$+A$+A$+A$+A$+A$+A$+A$+B$+B$+B$+B$+B$+B$+B$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+H$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$
  3000  MMAP$(46)=A$+A$+A$+A$+A$+B$+B$+B$+B$+B$+B$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+D$+D$+A$+A$+A$+B$+B$+B$+B$+B$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+H$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$
  3010  MMAP$(47)=A$+A$+A$+A$+A$+A$+B$+B$+B$+B$+B$+B$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+D$+D$+D$+A$+A$+A$+B$+B$+B$+B$+B$+B$+B$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+H$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$
- 3020  REM Adding colors to map - too slow to do it every time
+ 3020  REM Adding colors
  3030  FOR I = 0 TO 47
  3040  FOR J = 1 TO 80
  3050  X$ = MID$(MAP$(I),J,1)
@@ -334,7 +334,7 @@
  3340  PRINT TAB$(3) + "                                                                          "
  3350  PRINT TAB$(3) + "                                                                          "
  3360  PRINT CHR$(27) + "[38;5;28m" + TAB$(3) + "                              Press Enter                           "
- 3370  INPUT DUMPP$
+ 3370  INPUT " ", DUMPP$
  3380  PRINT CHR$(27) + "[38;5;214m"
  3390  PRINT "  After over 400 years of peace, the Voteron Kingdom was attacked by a dragon.  "
  3400  PRINT "The dreadful beast destroyed a few cities and flee to mountains in northeastern"
