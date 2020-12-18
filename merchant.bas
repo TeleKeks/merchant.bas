@@ -1047,7 +1047,7 @@
 10470  IF CAVECHOICE$ = "NO" OR CAVECHOICE$ = "N" THEN PRINT "You return to the main road. " : RETURN
 10480  IF CAVECHOICE$ <> "N" AND CAVECHOICE$ <> "NO" AND CAVECHOICE$ <> "Y" AND CAVECHOICE$ <> "YES" THEN GOTO 10440
 10490  IF CAVECHOICE$ = "Y" OR CAVECHOICE$ = "YES" THEN PRINT "You decide to enter. Inside the cave you meet an old man in red robes. He says:"
-10500  PRINT "'It's dangerous to go in alone. Take this!'"
+10500  PRINT "'It's dangerous to go in alone! Take this.'"
 10510  PRINT "The old man gives you a short sword."
 10520  WEAPON$ = "short sword"
 10530  RETURN
