@@ -555,7 +555,7 @@
  6110  PRINT "How many units? You can afford up to " + STR$(AFFORDGOODS) + "."
  6120  INPUT UNITSCHOICE$
  6130  IF VAL(UNITSCHOICE$) < 0 THEN PRINT "No, that's a dumb idea. You can't buy a negative number of goods." : GOTO 6110
- 6140  IF VAL(UNITSCHOICE$) = 0 THEN PRINT "You decide to not buy." : GOTO 5740
+ 6140  IF VAL(UNITSCHOICE$) = 0 THEN PRINT "You decide against buying anything for the time being." : GOTO 5750
  6150  IF VAL(UNITSCHOICE$) > AFFORDGOODS THEN PRINT "You don't have enough gold to buy " + UNITSCHOICE$ + " units." : GOTO 6110
  6160  IF VAL(UNITSCHOICE$)*GOODSWEIGHT(GOODSCHOICENR) + CAPACITY > MAXCAPACITY THEN PRINT "That's too heavy! You need to hire more workers to carry the goods." : GOTO 6110
  6170  IF VAL(UNITSCHOICE$) > 1 THEN PRINT "You buy " + UNITSCHOICE$ + " units." : GOTO 6200
@@ -627,10 +627,10 @@
  6830  REM
  6840  REM Renting a room
  6850  IF GOLD < 20 + 2*PEOPLE THEN Print "You can't afford to rent a room." : GOTO 6730
- 6860  IF PEOPLE = O THEN PRINT "You rent a room. You pay 20 gold pieces."
- 6870  IF PEOPLE = 1 THEN PRINT "You rent a room for you and your employee. You pay 22 gold pieces."
- 6880  IF PEOPLE > 5 THEN PRINT "You rent rooms for you and your " + STR$(PEOPLE) + " people. You pay " + STR$(20+2*PEOPLE) + " gold pieces."
- 6890  IF PEOPLE > 1 AND PEOPLE < 6 THEN PRINT "You rent a room for you and your " + STR$(PEOPLE) + " people. You pay " + STR$(20+2*PEOPLE) + " gold pieces."
+ 6860  IF PEOPLE = O THEN PRINT "You rent a room and pay 20 gold pieces."
+ 6870  IF PEOPLE = 1 THEN PRINT "You rent a room for you and your employee and pay 22 gold pieces."
+ 6880  IF PEOPLE > 5 THEN PRINT "You rent rooms for you and your " + STR$(PEOPLE) + " people, and you pay " + STR$(20+2*PEOPLE) + " gold pieces."
+ 6890  IF PEOPLE > 1 AND PEOPLE < 6 THEN PRINT "You rent a room for you and your " + STR$(PEOPLE) + " people, paying " + STR$(20+2*PEOPLE) + " gold pieces."
  6900  GOLD = GOLD - (20+PEOPLE*2)
  6910  HP = MAXHP
  6920  PRINT "You wake up refreshed." : GOTO 6730
