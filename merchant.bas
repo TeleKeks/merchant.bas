@@ -639,7 +639,7 @@
  6950  IF GOLD < WORKERSPRICE(CURRENTCITY) THEN PRINT "You don't have enough money to hire even one worker!" : GOTO 6730
  6960  IF WORKERS = 50 THEN PRINT "You already employ the maximum number of workers one can employ." : GOTO 6730
  6970  PRINT "The cost is " + STR$(WORKERSPRICE(CURRENTCITY)) + " gold pieces per employee. How many workers would you like to hire?"
- 6980  INPUT HOWMANYWORKERS$
+ 6980  INPUT "", HOWMANYWORKERS$
  6990  IF VAL(HOWMANYWORKERS$) = 0 THEN PRINT "You decide to not hire anybody." : GOTO 6730
  7000  IF VAL(HOWMANYWORKERS$) < 0 THEN PRINT "Please enter a positive number." : GOTO 6970
  7010  IF VAL(HOWMANYWORKERS$)*WORKERSPRICE(CURRENTCITY) = 0 THEN PRINT "You decide to not hire anyone." : GOTO 6730
@@ -656,8 +656,8 @@
  7120  REM Hiring mercenaries
  7130  IF GOLD < MERCPRICE(CURRENTCITY) THEN PRINT "You don't have enough money to hire even one mercenary!" : GOTO 6730
  7140  IF MERCENARIES = 50 THEN PRINT "You already employ the maximum number of mercenaries." : GOTO 6730
- 7150  PRINT "The cost is " + STR$(MERCPRICE(CURRENTCITY)) + " gold pieces per employee. How many mercenaries do you want to hire?"
- 7160  INPUT HOWMANYWORKERS$
+ 7150  PRINT "The cost is " + STR$(MERCPRICE(CURRENTCITY)) + " gold pieces per employee. How many mercenaries would you like to hire?"
+ 7160  INPUT "", HOWMANYWORKERS$
  7170  IF VAL(HOWMANYWORKERS$) = 0 THEN PRINT "You decide to not hire anybody." : GOTO 6730
  7180  IF VAL(HOWMANYWORKERS$) < 0 THEN PRINT "Please enter a positive number." : GOTO 7150
  7190  IF VAL(HOWMANYWORKERS$) * MERCPRICE(CURRENTCITY) = 0 THEN PRINT "You decide to not hire anyone." : GOTO 6730
