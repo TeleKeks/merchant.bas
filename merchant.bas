@@ -299,22 +299,23 @@
  2990  MMAP$(45)=A$+A$+A$+A$+B$+B$+B$+B$+B$+B$+B$+B$+B$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+B$+B$+B$+A$+A$+D$+D$+D$+D$+B$+B$+B$+A$+A$+A$+A$+A$+A$+A$+B$+B$+B$+B$+B$+B$+B$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+H$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$
  3000  MMAP$(46)=A$+A$+A$+A$+A$+B$+B$+B$+B$+B$+B$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+D$+D$+A$+A$+A$+B$+B$+B$+B$+B$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+H$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$
  3010  MMAP$(47)=A$+A$+A$+A$+A$+A$+B$+B$+B$+B$+B$+B$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+D$+D$+D$+A$+A$+A$+B$+B$+B$+B$+B$+B$+B$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+A$+H$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$+D$
- 3020  REM Adding colors to map - too slow to do it every time
- 3030  REM FOR I = 0 TO 47
- 3040  REM  FOR J = 1 TO 80
- 3050  REM   X$ = MID$(MAP$(I),J,1)
- 3060  REM   IF X$ = "." THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;076m" + X$
- 3070  REM   IF X$ = "t" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;023m" + X$
- 3080  REM   IF X$ = "#" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;094m" + X$
- 3090  REM   IF X$ = "~" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;051m" + X$
- 3100  REM   IF X$ = "O" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;088m" + X$
- 3110  REM   IF X$ = "^" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;240m" + X$
- 3120  REM   IF X$ = "D" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;142m" + X$
- 3130  REM   IF X$ = "," THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;222m" + "."
- 3140  REM  NEXT J
- 3150  REM NEXT I
+ 3020  REM Adding colors
+ 3030  FOR I = 0 TO 47
+ 3040  FOR J = 1 TO 80
+ 3050  X$ = MID$(MAP$(I),J,1)
+ 3060  IF X$ = "." THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;076m" + X$
+ 3070  IF X$ = "t" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;023m" + X$
+ 3080  IF X$ = "#" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;094m" + X$
+ 3090  IF X$ = "~" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;051m" + X$
+ 3100  IF X$ = "O" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;088m" + X$
+ 3110  IF X$ = "^" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;240m" + X$
+ 3120  IF X$ = "D" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;142m" + X$
+ 3130  IF X$ = "," THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;222m" + "."
+ 3140  NEXT J
+ 3150  NEXT I
  3160  CLS
- 3170  PRINT CHR$(27) + "[38;5;28m" + TAB$(3) + "                     Programmed in TeleBASIC by Keks                  "
+ 3170  PRINT CHR$(27) + "[38;5;28m" + TAB$(3) + "                     Programmed in TeleBASIC by Keks                 "
+ 3175  PRINT CHR$(27) + "[38;5;28m" + TAB$(3) + "                  Minor     Improvements     by     ZCJ              "
  3180  PRINT CHR$(27) + "[38;5;142m"
  3190  PRINT ""
  3200  PRINT ""
@@ -334,11 +335,11 @@
  3340  PRINT TAB$(3) + "                                                                          "
  3350  PRINT TAB$(3) + "                                                                          "
  3360  PRINT CHR$(27) + "[38;5;28m" + TAB$(3) + "                              Press Enter                           "
- 3370  INPUT DUMPP$
+ 3370  INPUT " ", DUMPP$
  3380  PRINT CHR$(27) + "[38;5;214m"
- 3390  PRINT "  After over 400 years of peace the Voteron Kingdom was attacked by adragon.  "
+ 3390  PRINT "  After over 400 years of peace, the Voteron Kingdom was attacked by a dragon.  "
  3400  PRINT "The dreadful beast destroyed a few cities and flee to mountains in northeastern"
- 3410  PRINT "  part of country.Several warriors, wizards and other heroes tried to kill    "
+ 3410  PRINT "  part of country. Several warriors, wizards and other heroes tried to kill    "
  3420  PRINT "the dragon in its lair, but failed. The king of Voteron offered half a million "
  3430  PRINT "  gold pieces for slaying the dragon. You never considered yourself a hero,    "
  3440  PRINT "but you always loved money, so you decided to do it. You aren't powerful enough"
@@ -592,7 +593,7 @@
  5920  IF GOODSCHOICE$ = "CO" OR GOODSCHOICE$ = "C" THEN PRINT "A merchant asks you: cotton or copper ore, dear sir?" : GOTO 5950
  5930  IF GOODSCHOICE$ = "F" THEN PRINT "A merchant asks you: fish or furs, dear sir?" : GOTO 5950
  5940  NEXT I
- 5950  IF GOODSCHOICENR = 13 THEN PRINT "Please enter the valid goods name or number." : GOTO 5830
+ 5950  IF GOODSCHOICENR = 13 THEN PRINT "Please enter a valid good's name or number." : GOTO 5830
  5960  IF GOLD = 0 THEN PRINT "You don't have money to buy anything!" : GOTO 5740
  5970  AFFORDGOODS = 0
  5980  IF GOODSCHOICENR = 0 THEN AFFORDGOODS = INT(GOLD / BEER(CURRENTCITY))
@@ -612,7 +613,7 @@
  6120  INPUT UNITSCHOICE$
  6130  IF VAL(UNITSCHOICE$) < 0 THEN PRINT "No, that's a dumb idea. You can't buy a negative number of goods." : GOTO 6110
  6140  IF VAL(UNITSCHOICE$) = 0 THEN PRINT "You decide to not buy." : GOTO 5740
- 6150  IF VAL(UNITSCHOICE$) > AFFORDGOODS THEN PRINT "You don't have enough money to buy " + UNITSCHOICE$ + " units." : GOTO 6110
+ 6150  IF VAL(UNITSCHOICE$) > AFFORDGOODS THEN PRINT "You don't have enough gold to buy " + UNITSCHOICE$ + " units." : GOTO 6110
  6160  IF VAL(UNITSCHOICE$)*GOODSWEIGHT(GOODSCHOICENR) + CAPACITY > MAXCAPACITY THEN PRINT "That's too heavy! You need to hire more workers to carry the goods." : GOTO 6110
  6170  IF VAL(UNITSCHOICE$) > 1 THEN PRINT "You buy " + UNITSCHOICE$ + " units." : GOTO 6200
  6180  IF VAL(UNITSCHOICE$) = 1 THEN PRINT "You buy one unit." : GOTO 6200
@@ -644,7 +645,7 @@
  6440  IF GOODSCHOICE$ = "CO" OR GOODSCHOICE$ = "C" THEN PRINT "A merchant asks you: cotton or copper ore, dear sir?" : GOTO 6470
  6450  IF GOODSCHOICE$ = "F" THEN PRINT "A merchant asks you: fish or furs, dear sir?" : GOTO 6470
  6460  NEXT I
- 6470  IF GOODSCHOICENR = 13 THEN PRINT "Please enter the valid goods name or number." : GOTO 6350
+ 6470  IF GOODSCHOICENR = 13 THEN PRINT "Please enter a valid good's name or number." : GOTO 6350
  6480  IF GOODS(GOODSCHOICENR) = 0 THEN PRINT "You don't have any " + GOODSNAME$(GOODSCHOICENR) + "!": GOTO 5740
  6490  PRINT "How many units you want to sell? You have " + STR$(GOODS(GOODSCHOICENR)) + "."
  6500  INPUT UNITSCHOICE$
@@ -693,8 +694,8 @@
  6930  REM
  6940  REM Hiring workers
  6950  IF GOLD < WORKERSPRICE(CURRENTCITY) THEN PRINT "You don't have enough money to hire even one worker!" : GOTO 6730
- 6960  IF WORKERS = 50 THEN PRINT "You already employ maximum number of workers." : GOTO 6730
- 6970  PRINT "The cost is " + STR$(WORKERSPRICE(CURRENTCITY)) + " gold pieces per employee. How many workers do you want to hire?"
+ 6960  IF WORKERS = 50 THEN PRINT "You already employ the maximum number of workers one can employ." : GOTO 6730
+ 6970  PRINT "The cost is " + STR$(WORKERSPRICE(CURRENTCITY)) + " gold pieces per employee. How many workers would you like to hire?"
  6980  INPUT HOWMANYWORKERS$
  6990  IF VAL(HOWMANYWORKERS$) = 0 THEN PRINT "You decide to not hire anybody." : GOTO 6730
  7000  IF VAL(HOWMANYWORKERS$) < 0 THEN PRINT "Please enter a positive number." : GOTO 6970
@@ -711,7 +712,7 @@
  7110  REM
  7120  REM Hiring mercenaries
  7130  IF GOLD < MERCPRICE(CURRENTCITY) THEN PRINT "You don't have enough money to hire even one mercenary!" : GOTO 6730
- 7140  IF MERCENARIES = 50 THEN PRINT "You already employ maximum number of mercenaries." : GOTO 6730
+ 7140  IF MERCENARIES = 50 THEN PRINT "You already employ the maximum number of mercenaries." : GOTO 6730
  7150  PRINT "The cost is " + STR$(MERCPRICE(CURRENTCITY)) + " gold pieces per employee. How many mercenaries do you want to hire?"
  7160  INPUT HOWMANYWORKERS$
  7170  IF VAL(HOWMANYWORKERS$) = 0 THEN PRINT "You decide to not hire anybody." : GOTO 6730
@@ -868,7 +869,7 @@
  8680  NEXT I
  8690  WORKERS = 0
  8700  CAPACITY = 0
- 8710  IF MAGES = 1 THEN PRINT "Your mage looks at you with disfavor."
+ 8710  IF MAGES = 1 THEN PRINT "Your mage looks at you with dsfavor."
  8720  DICEROLL3 = FND(10)
  8730  IF DICEROLL3 = 10 AND MAGES = 1 THEN PRINT "Your mage says 'I don't wanna travel with such coward as you' and leaves you." : MAGES = 0
  8740  IF MERCENARIES > 1 THEN PRINT "Your mercenaries are upset with you for your decision."
@@ -986,78 +987,396 @@
  9860  PRINT "          |                 |            "
  9870  PRINT "          |       RIP       |            "
  9880  PRINT "          |                 |            "
- 9890  PRINT "          |" + CHR$(27) + "[38;5;252m" + TAB$(NINT((17-LEN(NAME$))/2)) + NAME$ + TAB$(NINT((18-LEN(NAME$))/2)) + "" + CHR$(27) + "[38;5;246m|            "
- 9900  PRINT "          |                 |            "
- 9910  PRINT "          |                 |            "
- 9920  PRINT CHR$(27) + "[38;5;040m.........." + CHR$(27) + "[38;5;246m|" + CHR$(27) + "[38;5;040m................." + CHR$(27) + "[38;5;246m|" + CHR$(27) + "[38;5;040m............"
- 9930  PRINT CHR$(27) + "[0mPress enter"
- 9940  INPUT DUMPP$
- 9950  END
- 9960  REM
- 9970  REM Fight with the dragon
- 9980  PRINT "Do you really want to enter the cave?"
- 9990  PRINT CHR$(27) + "[38;5;051m[y]" + CHR$(27) + "[38;5;252mes/" + CHR$(27) + "[38;5;051m[n]" + CHR$(27) + "[38;5;252mo ";
-10000  INPUT "", DRAGONCHOICE$
-10010  DRAGONCHOICE$ = UPS$(DRAGONCHOICE$)
-10020  IF DRAGONCHOICE$ = "N" OR DRAGONCHOICE$ = "NO" THEN PRINT "You decide to not take a risk." : RETURN
-10030  IF DRAGONCHOICE$ <> "Y" AND DRAGONCHOICE$ <> "YES" THEN GOTO 9990
-10040  PRINT "You enter the cave. The dragon notices you! The dragon is hostile!"
-10050  ENEMY$ = "red dragon" : ENEMYHP = 300 : ENEMYATTACK = 25 : ENEMYEXPERIENCE = 4000 : ENEMYGOLD = 10000
-10060  GOTO 8440
-10070  PRINT "You have defeated the dragon. The Voteron Kingdom is now safe."
-10080  END
-10090  REM Random events
-10100  REM
-10110  DICEROLL10 = FND(30)
-10120  IF DICEROLL10 = 1 THEN GOTO 10430
-10130  IF DICEROLL10 = 2 THEN GOTO 10580
-10140  IF DICEROLL10 = 3 THEN GOTO 10650
-10150  IF DICEROLL10 = 4 THEN GOTO 10800
-10160  IF DICEROLL10 = 5 THEN GOTO 10880
-10170  IF DICEROLL10 = 6 THEN GOTO 10950
-10180  IF DICEROLL10 = 7 THEN GOTO 11000
-10190  IF DICEROLL10 = 8 THEN GOTO 11050
-10200  IF DICEROLL10 = 9 THEN GOTO 11150
-10210  IF DICEROLL10 = 10 THEN GOTO 11220
-10220  IF DICEROLL10 = 11 THEN GOTO 11370
-10230  IF DICEROLL10 = 12 THEN GOTO 11640
-10240  IF DICEROLL10 = 13 THEN GOTO 11840
-10250  IF DICEROLL10 = 14 THEN GOTO 11960
-10260  IF DICEROLL10 = 15 THEN GOTO 12030
-10270  IF DICEROLL10 = 16 THEN GOTO 12180
-10280  IF DICEROLL10 = 17 THEN GOTO 12390
-10290  IF DICEROLL10 = 18 THEN GOTO 12550
-10300  IF DICEROLL10 = 19 THEN GOTO 12600
-10310  IF DICEROLL10 = 20 THEN GOTO 12640
-10320  IF DICEROLL10 = 21 THEN GOTO 12680
-10330  IF DICEROLL10 = 22 THEN GOTO 12720
-10340  IF DICEROLL10 = 23 THEN GOTO 12770
-10350  IF DICEROLL10 = 24 THEN GOTO 12810
-10360  IF DICEROLL10 = 25 THEN GOTO 12850
-10370  IF DICEROLL10 = 26 THEN GOTO 12910
-10380  IF DICEROLL10 = 27 THEN GOTO 13090
-10390  IF DICEROLL10 = 28 THEN GOTO 13160
-10400  IF DICEROLL10 = 29 THEN GOTO 13400
-10410  IF DICEROLL10 = 30 THEN GOTO 13610
-10420  REM
-10430  REM Dice roll 1
-10440  IF WEAPON$ <> "no weapon" THEN RETURN
-10450  IF PEOPLE > 0 THEN RETURN
-10460  PRINT "You find an enterance to a small cave. Do you want to enter?"
-10470  PRINT CHR$(27) + "[38;5;051m[y]" + CHR$(27) + "[38;5;252mes/" + CHR$(27) + "[38;5;051m[n]" + CHR$(27) + "[38;5;252mo ";
-10480  INPUT "", CAVECHOICE$
-10490  CAVECHOICE$ = UPS$(CAVECHOICE$)
-10500  IF CAVECHOICE$ = "NO" OR CAVECHOICE$ = "N" THEN PRINT "You return to the main road. " : RETURN
-10510  IF CAVECHOICE$ <> "N" AND CAVECHOICE$ <> "NO" AND CAVECHOICE$ <> "Y" AND CAVECHOICE$ <> "YES" THEN GOTO 10470
-10520  IF CAVECHOICE$ = "Y" OR CAVECHOICE$ = "YES" THEN PRINT "You decide to enter. Inside the cave you meet an old man in red robes. He says:"
-10530  PRINT "'It's dangerous to go alone, take this!'"
-10540  PRINT "The old man gives you a short sword."
-10550  WEAPON$ = "short sword"
-10560  RETURN
-10570  REM
-10580  REM Dice roll 2
-10590  IF MAXCAPACITY-CAPACITY < 15 THEN RETURN
-10600  TOODSROLL = FND(4) + 1
+ 9890  PRINT CHR$(27) + "[38;5;040m.........." + CHR$(27) + "[38;5;246m|" + CHR$(27) + "[38;5;040m................." + CHR$(27) + "[38;5;246m|" + CHR$(27) + "[38;5;040m............"
+ 9900  PRINT CHR$(27) + "[0mPress enter"
+ 9910  INPUT DUMPP$
+ 9920  END
+ 9930  REM
+ 9940  REM Fight with the dragon
+ 9950  PRINT "Do you really want to enter the cave?"
+ 9960  PRINT CHR$(27) + "[38;5;051m[y]" + CHR$(27) + "[38;5;252mes/" + CHR$(27) + "[38;5;051m[n]" + CHR$(27) + "[38;5;252mo ";
+ 9970  INPUT "", DRAGONCHOICE$
+ 9980  DRAGONCHOICE$ = UPS$(DRAGONCHOICE$)
+ 9990  IF DRAGONCHOICE$ = "N" OR DRAGONCHOICE$ = "NO" THEN PRINT "You decide to not take a risk." : RETURN
+10000  IF DRAGONCHOICE$ <> "Y" AND DRAGONCHOICE$ <> "YES" THEN GOTO 9960
+10010  PRINT "You enter the cave. The dragon notices you! The dragon is hostile!"
+10020  ENEMY$ = "red dragon" : ENEMYHP = 300 : ENEMYATTACK = 25 : ENEMYEXPERIENCE = 4000 : ENEMYGOLD = 10000
+10030  GOTO 8450
+10040  PRINT "You have defeated the dragon. The Voteron Kingdom is now safe."
+10050  END
+10060  REM Random events
+10070  REM
+10080  DICEROLL10 = FND(30)
+10090  IF DICEROLL10 = 1 THEN GOTO 10400
+10100  IF DICEROLL10 = 2 THEN GOTO 10550
+10110  IF DICEROLL10 = 3 THEN GOTO 10620
+10120  IF DICEROLL10 = 4 THEN GOTO 10770
+10130  IF DICEROLL10 = 5 THEN GOTO 10850
+10140  IF DICEROLL10 = 6 THEN GOTO 10920
+10150  IF DICEROLL10 = 7 THEN GOTO 10970
+10160  IF DICEROLL10 = 8 THEN GOTO 11020
+10170  IF DICEROLL10 = 9 THEN GOTO 11120
+10180  IF DICEROLL10 = 10 THEN GOTO 11190
+10190  IF DICEROLL10 = 11 THEN GOTO 11340
+10200  IF DICEROLL10 = 12 THEN GOTO 11610
+10210  IF DICEROLL10 = 13 THEN GOTO 11810
+10220  IF DICEROLL10 = 14 THEN GOTO 11930
+10230  IF DICEROLL10 = 15 THEN GOTO 12000
+10240  IF DICEROLL10 = 16 THEN GOTO 12150
+10250  IF DICEROLL10 = 17 THEN GOTO 12360
+10260  IF DICEROLL10 = 18 THEN GOTO 12520
+10270  IF DICEROLL10 = 19 THEN GOTO 12570
+10280  IF DICEROLL10 = 20 THEN GOTO 12610
+10290  IF DICEROLL10 = 21 THEN GOTO 12650
+10300  IF DICEROLL10 = 22 THEN GOTO 12690
+10310  IF DICEROLL10 = 23 THEN GOTO 12740
+10320  IF DICEROLL10 = 24 THEN GOTO 12780
+10330  IF DICEROLL10 = 25 THEN GOTO 12820
+10340  IF DICEROLL10 = 26 THEN GOTO 12880
+10350  IF DICEROLL10 = 27 THEN GOTO 13060
+10360  IF DICEROLL10 = 28 THEN GOTO 13130
+10370  IF DICEROLL10 = 29 THEN GOTO 13370
+10380  IF DICEROLL10 = 30 THEN GOTO 13580
+10390  REM
+10400  REM Dice roll 1
+10410  IF WEAPON$ <> "no weapon" THEN RETURN
+10420  IF PEOPLE > 0 THEN RETURN
+10430  PRINT "You find an enterance to a small cave. Do you want to enter?"
+10440  PRINT CHR$(27) + "[38;5;051m[y]" + CHR$(27) + "[38;5;252mes/" + CHR$(27) + "[38;5;051m[n]" + CHR$(27) + "[38;5;252mo ";
+10450  INPUT "", CAVECHOICE$
+10460  CAVECHOICE$ = UPS$(CAVECHOICE$)
+10470  IF CAVECHOICE$ = "NO" OR CAVECHOICE$ = "N" THEN PRINT "You return to the main road. " : RETURN
+10480  IF CAVECHOICE$ <> "N" AND CAVECHOICE$ <> "NO" AND CAVECHOICE$ <> "Y" AND CAVECHOICE$ <> "YES" THEN GOTO 10440
+10490  IF CAVECHOICE$ = "Y" OR CAVECHOICE$ = "YES" THEN PRINT "You decide to enter. Inside the cave you meet an old man in red robes. He says:"
+10500  PRINT "'It's dangerous to go in alone! Take this.'"
+10510  PRINT "The old man gives you a short sword."
+10520  WEAPON$ = "short sword"
+10530  RETURN
+10540  REM
+10550  REM Dice roll 2
+10560  IF MAXCAPACITY-CAPACITY < 15 THEN RETURN
+10570  TOODSROLL = FND(4) + 1
+10580  PRINT "You find " + STR$(TOODSROLL) + " fresh toods."
+10590  GOODS(4) = GOODS(4) + TOODSROLL
+10600  RETURN
+10610  REM
+10620  REM Dice roll 3
+10630  IF STRENGTH > 19 THEN RETURN
+10640  PRINT "You meet a caravan of gnome merchants."
+10650  PRINT "One of them offers you a potion of strength for 500 gold pieces."
+10660  PRINT "Do you want to buy?"
+10670  PRINT CHR$(27) + "[38;5;051m[y]" + CHR$(27) + "[38;5;252mes/" + CHR$(27) + "[38;5;051m[n]" + CHR$(27) + "[38;5;252mo ";
+10680  INPUT "", GNOMECHOICE$
+10690  GNOMECHOICE$ = UPS$(GNOMECHOICE$)
+10700  IF GNOMECHOICE$ <> "Y" AND GNOMECHOICE$ <> "YES" AND GNOMECHOICE$ <> "NO" AND GNOMECHOICE$ <> "N" THEN GOTO 10670
+10710  IF GNOMECHOICE$ = "N" OR GNOMECHOICE$ = "NO" THEN PRINT "You decide to not buy" : RETURN
+10720  IF (GNOMECHOICE$ = "Y" OR GNOMECHOICE$ = "YES") AND GOLD < 500 THEN PRINT "You want to buy it, but you don't have enough money." : RETURN
+10730  PRINT "You buy a potion and immediately drink it. You feel slightly stronger."
+10740  STRENGTH = STRENGTH + 1
+10750  RETURN
+10760  REM
+10770  REM Dice roll 4
+10780  IF MERCENARIES < 5 THEN RETURN
+10790  IF GOODS(0) < 5 THEN RETURN
+10800  BEERROLL = FND(4)+1
+10810  PRINT "Your mercenaries started a party and got drunk. They took your " + STR$(BEERROLL) + " barrels of beer."
+10820  GOODS(0) = GOODS(0) - BEERROLL
+10830  RETURN
+10840  REM
+10850  REM Dice roll 5
+10860  IF WORKERS < 2 THEN RETURN
+10870  IF MAXCAPACITY-CAPACITY < 30 THEN RETURN
+10880  PRINT "One of your workers died of dysentery. "
+10890  WORKERS = WORKERS - 1
+10900  RETURN
+10910  REM
+10920  REM Dice roll 6
+10930  PRINT "You meet a group of guards patrolling the road. One of them says to you:"
+10940  PRINT "'I used to be a merchant like you. Then I took an arrow in the knee...'"
+10950  RETURN
+10960  REM
+10970  REM Dice roll 7
+10980  PRINT "You find a gold coin on the road. Well, it may be your lucky day."
+10990  GOLD = GOLD + 1
+11000  RETURN
+11010  REM
+11020  REM Dice roll 8
+11030  IF GOLD < 1000 THEN RETURN
+11040  IF MERCENARIES < 10 THEN RETURN
+11050  MERCENARYROLL = FND(4) + 1
+11060  GOLDROLL = FND(150)+10
+11070  PRINT STR$(MERCENARYROLL) + " of your mercenaries stole your money and flee. You lost " + STR$(GOLDROLL) + " gold pieces."
+11080  GOLD = GOLD - GOLDROLL
+11090  MERCENARIES = MERCENARIES - MERCENARYROLL
+11100  RETURN
+11110  REM
+11120  REM Dice roll 9
+11130  IF GOLD < 10000 THEN RETURN
+11140  PRINT "You meet a tax inspector. He asks you about taxes you didn't pay."
+11150  PRINT "The tax inspector is hostile!"
+11160  ENEMY$ = "tax inspector" : ENEMYATTACK = 10 : ENEMYHP = 60 : ENEMYEXPERIENCE = 200 : ENEMYGOLD = 1000
+11170  GOTO 8450
+11180  REM
+11190  REM Dice roll 10
+11200  IF CHARISMA > 19 THEN RETURN
+11210  IF GOLD < 50 THEN RETURN
+11220  PRINT "You meet a bard in a crossroads inn. The bard tells you he's broke."
+11230  PRINT "Do you want to give him 50 gold pieces?"
+11240  PRINT CHR$(27) + "[38;5;051m[y]" + CHR$(27) + "[38;5;252mes/" + CHR$(27) + "[38;5;051m[n]" + CHR$(27) + "[38;5;252mo ";
+11250  INPUT "", BARDCHOICE$
+11260  BARDCHOICE$ = UPS$(BARDCHOICE$)
+11270  IF BARDCHOICE$ = "N" OR BARDCHOICE$ = "NO" THEN PRINT "You leave the inn. The bard is very unhappy." : RETURN
+11280  IF BARDCHOICE$ <> "Y" AND BARDCHOICE$ <> "YES" THEN GOTO 11240
+11290  PRINT "The young bard thanks you and gives you a few tips on art of persuasion."
+11300  PRINT "You feel your charisma increased by one point!"
+11310  CHARISMA = CHARISMA + 1 : GOLD = GOLD - 50
+11320  RETURN
+11330  REM
+11340  REM Dice roll 11
+11350  IF BUMMAP = 1 THEN RETURN
+11360  IF GOODS(8) < 6 THEN RETURN
+11370  PRINT "You meet a dwarven bum. He challenges you to a drinking duel."
+11380  PRINT "Do you want to drink wine with the dwarven bum?"
+11390  PRINT CHR$(27) + "[38;5;051m[y]" + CHR$(27) + "[38;5;252mes/" + CHR$(27) + "[38;5;051m[n]" + CHR$(27) + "[38;5;252mo ";
+11400  INPUT "", BUMCHOICE$
+11410  BUMCHOICE$ = UPS$(BUMCHOICE$)
+11420  IF BUMCHOICE$ = "N" OR BUMCHOICE$ = "NO" THEN PRINT "You refuse to drink. The dwarven bum is very upset." : PRINT "The dwarven bum draws a weapon and starts a fight!"
+11430  IF BUMCHOICE$ = "N" OR BUMCHOICE$ = "NO" THEN ENEMY$ = "dwarven bum" : ENEMYATTACK = 5 : ENEMYEXPERIENCE = 100 : ENEMYHP = 20 : ENEMYGOLD = 0 : GOTO 8450
+11440  IF BUMCHOICE$ <> "Y" AND BUMCHOICE$ <> "YES" THEN GOTO 11390
+11450  PRINT "You start drinking wine with the dwarven bum."
+11460  PRINT "You and the dwarven bum drink the first bottle of wine. He looks sober."
+11470  PRINT "You start drinking second bottle of wine. The dwarven bum is still sober."
+11480  PRINT "You have a vertigo, but continue drinking. The dwarven bum burps."
+11490  GOODS(8) = GOODS(8) - 6
+11500  BUMROLL = FND(10) + ENDURANCE
+11510  IF BUMROLL < 18 THEN PRINT "After the third bottle you black out. You wake up next morning with terrible headache." : PRINT "The dwarven bum is gone. There are six empty bottle lying around." : RETURN
+11520  PRINT "After the third bottle the dwarf blacks out. You win the drinking duel!"
+11530  PRINT "You wake up next morning with annoying headache. The dwarven bum vomits."
+11540  PRINT "After eating a very spicy breakfast the dwarven bum tells you his story."
+11550  PRINT "He says he used to be a bandit, but was too scared to kill people and resigned."
+11560  PRINT "He tels you about small cave where his comrades used to store stolen gold."
+11570  PRINT "The dwarven bum quickly draws a map to the cave and leaves you."
+11580  BUMMAP = 1
+11590  RETURN
+11600  REM
+11610  REM Dice roll 12
+11620  IF BUMMAP = 0 THEN RETURN
+11630  IF BUMTREASURE = 1 THEN RETURN
+11640  PRINT "You find a small cave marked on dwarven bum's map. "
+11650  PRINT "You feel excited. Do you want do enter the cave?"
+11660  BUMTREASURE = 1
+11670  PRINT CHR$(27) + "[38;5;051m[y]" + CHR$(27) + "[38;5;252mes/" + CHR$(27) + "[38;5;051m[n]" + CHR$(27) + "[38;5;252mo ";
+11680  INPUT "", BUMCAVECHOICE$
+11690  BUMCAVECHOICE$ = UPS$(BUMCAVECHOICE$)
+11700  IF BUMCAVECHOICE$ = "N" OR BUMCAVECHOICE$ = "NO" THEN PRINT "You return on the main road. You feel you missed some big opportunity." : RETURN
+11710  IF BUMCAVECHOICE$ <> "Y" AND BUMCAVECHOICE$ <> "YES" THEN GOTO 11670
+11720  IF MAXCAPACITY-CAPACITY < 10 THEN PRINT "You enter the cave and find a wooden chest with 5000 pieces of gold inside."
+11730  IF MAXCAPACITY-CAPACITY > 9 THEN PRINT "You enter the cave and find a wooden chest with 5000 pieces of gold inside." : PRINT "You also find a few diamonds and rubies." : GOODS(6) = GOODS(6) + 5
+11740  GOLD = GOLD + 5000
+11750  PRINT "When you leave the cave a bandit's chieftain notices you from the distance."
+11760  PRINT "The bandit's chieftain runs in your direction!"
+11770  PRINT "The bandit's chieftain is hostile!"
+11780  ENEMY$ = "bandit's chieftain" : ENEMYHP = 40 : ENEMYATTACK = 10 : ENEMYEXPERIENCE = 150 : ENEMYGOLD = 100
+11790  GOTO 8450
+11800  REM
+11810  REM Dice roll 13
+11820  PRINT "You notice a sleeping mountain troll. "
+11830  PRINT "Do you want to " + CHR$(27) + "[38;5;051m[a]" + CHR$(27) + "[38;5;252mttack the troll or " + CHR$(27) + "[38;5;051m[l]" + CHR$(27) + "[38;5;252meave him alone? ";
+11840  INPUT "", TROLLCHOICE$
+11850  TROLLCHOICE$ = UPS$(TROLLCHOICE$)
+11860  IF TROLLCHOICE$ = "L" OR TROLLCHOICE$ = "LEAVE" THEN PRINT "You leave the troll alone and return on the road." : RETURN
+11870  IF TROLLCHOICE$ <> "A" AND TROLLCHOICE$ <> "ATTACK" THEN GOTO 11830
+11880  PRINT "The mountain troll wakes up and is very angry."
+11890  PRINT "You start a fight with the mountain troll."
+11900  ENEMY$ = "mountain troll" : ENEMYHP = 100 : ENEMYATTACK = 20 : ENEMYEXPERIENCE = 500 : ENEMYGOLD = 0
+11910  GOTO 8450
+11920  REM
+11930  REM Dice roll 14
+11940  IF HP = MAXHP THEN RETURN
+11950  PRINT "You meet an elven priestess. She casts a spell and cure your wounds."
+11960  PRINT "You are fully healed."
+11970  HP = MAXHP
+11980  RETURN
+11990  REM
+12000  REM Dice roll 15
+12010  IF GOLD = 0 THEN RETURN
+12020  PRINT "You encounter a group of bandits."
+12030  PRINT "They say they will let you live if you give them all your money."
+12040  PRINT "Do you want to " + CHR$(27) + "[38;5;051m[f]" + CHR$(27) + "[38;5;252might with them or " + CHR$(27) + "[38;5;051m[p]" + CHR$(27) + "[38;5;252may? ";
+12050  INPUT "", BANDITSCHOICE$
+12060  BANDITSCHOICE$ = UPS$(BANDITSCHOICE$)
+12070  IF BANDITSCHOICE$ = "P" OR BANDITSCHOICE$ = "PAY" THEN GOLD = 0 : PRINT "You decided to give bandits all of your gold. " : PRINT "They laugh loudly and leave you alive. " : RETURN
+12080  IF BANDITSCHOICE$ <> "F" AND BANDITSCHOICE$ <> "FIGHT" THEN GOTO 12040
+12090  IF MERCENARIES > 1 THEN PRINT "Your mercenaries easily kill most of the bandits, but not the bandit's chief."
+12100  IF MERCENARIES = 1 THEN PRINT "You and your mercenary easily kill most of the bandits, but not their chief."
+12110  IF MERCENARIES = 0 THEN PRINT "You easily kill most of the bandits, but not their chief."
+12120  ENEMY$ = "bandit chief" : ENEMYHP = 30 : ENEMYATTACK = 10 : ENEMYEXPERIENCE = 100 : ENEMYGOLD = 100
+12130  GOTO 8450
+12140  REM
+12150  REM Dice roll 16
+12160  PRINT "You meet an alchemist who is traveling to the city. "
+12170  PRINT "He proposes you to make a potion of dexterity using 3 of your elixirs."
+12180  PRINT "Do you want to give him three elixirs?"
+12190  PRINT CHR$(27) + "[38;5;051m[y]" + CHR$(27) + "[38;5;252mes/" + CHR$(27) + "[38;5;051m[n]" + CHR$(27) + "[38;5;252mo ";
+12200  INPUT "", ALCHEMISTCHOICE$
+12210  ALCHEMISTCHOICE$ = UPS$(ALCHEMISTCHOICE$)
+12220  IF ALCHEMISTCHOICE$ = "N" OR ALCHEMISTCHOICE$ = "NO" THEN PRINT "You refuse the alchemist's proposal." : RETURN
+12230  IF ALCHEMISTCHOICE$ <> "Y" AND ALCHEMISTCHOICE$ <> "YES" THEN GOTO 12190
+12240  IF GOODS(3) < 3 THEN PRINT "You don't have that many elixirs! Such a bad luck." : RETURN
+12250  PRINT "The old alchemist carefully mixes your exlixirs. "
+12260  PRINT "He adds a drop of some strange, fluorescent liquid to the mixture."
+12270  PRINT "The potion of dexterity is ready!"
+12280  PRINT "The alchemist takes part of the potion as a payment for his work."
+12290  PRINT "You drink the potion, it tastes like strawberries."
+12300  GOODS(3) = GOODS(3) - 3
+12310  IF DEXTERITY > 19 THEN PRINT "You don't feel any difference. Your dexterity is already very high." : RETURN
+12320  PRINT "Your dexterity is now " + STR$(DEXTERITY+1) + "!"
+12330  DEXTERITY = DEXTERITY + 1
+12340  RETURN
+12350  REM
+12360  REM Dice roll 17
+12370  PRINT "You meet a village healer who offers to cure your wounds for 50 gold pieces."
+12380  PRINT "Do you want to pay for healing?"
+12390  PRINT CHR$(27) + "[38;5;051m[y]" + CHR$(27) + "[38;5;252mes/" + CHR$(27) + "[38;5;051m[n]" + CHR$(27) + "[38;5;252mo ";
+12400  INPUT "", HEALERCHOICE$
+12410  HEALERCHOICE$ = UPS$(HEALERCHOICE$)
+12420  IF HEALERCHOICE$ = "N" OR HEALERCHOICE$ = "NO" THEN PRINT "You decide to not pay and the village healer leaves." : RETURN
+12430  IF HEALERCHOICE$ <> "Y" AND HEALERCHOICE$ <> "YES" THEN GOTO 12390
+12440  IF GOLD < 50 THEN PRINT "You don't have enough gold!" : RETURN
+12450  GOLD = GOLD - 50
+12460  IF HP = MAXHP THEN PRINT "The healer takes your money and starts examining you." : PRINT "The village healer says you're completely healthy." : RETURN
+12470  PRINT "The village healer looks at your wounds and gives you a health potion."
+12480  PRINT "It tastes awful, but after a few minutes you feel much better."
+12490  HP = MAXHP
+12500  RETURN
+12510  REM
+12520  REM Dice roll 18
+12530  PRINT "You pass a carriage with an old man with grey beard and pointed hat."
+12540  PRINT "The old man is smoking a pipe. You wonder where is he going."
+12550  RETURN
+12560  REM
+12570  REM Dice roll 19
+12580  PRINT "You pass a group of farmers, returning from cabbage fields."
+12590  RETURN
+12600  REM
+12610  REM Dice roll 20
+12620  PRINT "You see a stone castle in the distance."
+12630  RETURN
+12640  REM
+12650  REM Dice roll 21
+12660  PRINT "It starts raining. You hope you will soon find an inn."
+12670  RETURN
+12680  REM
+12690  REM Dice roll 22
+12700  PRINT "You pass a shepherd and tens of sheep."
+12710  PRINT "You wonder how would look your life if you choose a different profession."
+12720  RETURN
+12730  REM
+12740  REM Dice roll 23
+12750  PRINT "You hear wolves howling in a distance."
+12760  RETURN
+12770  REM
+12780  REM Dice roll 24
+12790  PRINT "You hear an owl hooting."
+12800  RETURN
+12810  REM
+12820  REM Dice roll 25
+12830  PRINT "You pass a white-haired (but not old) man in black, leather jacket."
+12840  PRINT "He's carrying a corpse of some nasty monster."
+12850  PRINT "You wonder how rich would you be if you get paid for every monster you slayed."
+12860  RETURN
+12870  REM
+12880  REM Dice roll 26
+12890  PRINT "You meet a beggar who asks you for one gold piece."
+12900  PRINT "Do you want to give him money?"
+12910  PRINT CHR$(27) + "[38;5;051m[y]" + CHR$(27) + "[38;5;252mes/" + CHR$(27) + "[38;5;051m[n]" + CHR$(27) + "[38;5;252mo ";
+12920  INPUT "", BEGGARCHOICE$
+12930  BEGGARCHOICE$ = UPS$(BEGGARCHOICE$)
+12940  IF (BEGGARCHOICE$ = "N" OR BEGGARCHOICE$ = "NO") AND PEOPLE = 0 THEN PRINT "You refuse to give him a gold piece. Maybe it's a better choice." : RETURN
+12950  IF (BEGGARCHOICE$ = "N" OR BEGGARCHOICE$ = "NO") AND PEOPLE > 0 THEN PRINT "You refuse go give him a gold piece." : PRINT "One of your employees gives him a loaf of bread."
+12960  IF (BEGGARCHOICE$ = "N" OR BEGGARCHOICE$ = "NO") AND PEOPLE > 0 THEN PRINT "The beggar seems disappointed and throws the bread away when you leave him." : RETURN
+12970  IF BEGGARCHOICE$ <> "Y" AND BEGGARCHOICE$ <> "YES" THEN GOTO 12910
+12980  IF GOLD = 0 THEN PRINT "You want to give the beggar a coin, but you realize you are completely broke." : PRINT "The beggar smiles at you, you notice he's almost toothless."
+12990  IF GOLD = 0 THEN PRINT "The beggar opens his pouch which is full of money and gives you 5 gold pieces." : GOLD = GOLD + 5 : RETURN
+13000  GOLD = GOLD - 1
+13010  PRINT "You give the beggar one gold piece."
+13020  PRINT "He thanks you and tells you he used to be a spice merchant,"
+13030  PRINT "but lost all his wealth because of bandits and tax inspectors."
+13040  RETURN
+13050  REM
+13060  REM Dice roll 27
+13070  IF RACE$ <> "O" THEN RETURN
+13080  PRINT "You enter a crossroads inn, but the innkeeper shows you a sign:"
+13090  PRINT "'NO ORCS ALLOWED!'"
+13100  PRINT "You leave the inn in a bad mood. You think it's such an injustice."
+13110  RETURN
+13120  REM
+13130  REM Dice roll 28
+13140  PRINT "You meet an orc shamaness. She wants to sell you a weird potion that enhances "
+13150  PRINT "one's strength, but lowers charisma. The price is 300 gold pieces."
+13160  PRINT "Do you want to buy a potion?"
+13170  PRINT CHR$(27) + "[38;5;051m[y]" + CHR$(27) + "[38;5;252mes/" + CHR$(27) + "[38;5;051m[n]" + CHR$(27) + "[38;5;252mo ";
+13180  INPUT "", SHAMANESSCHOICE$
+13190  SHAMANESSCHOICE$ = UPS$(SHAMANESSCHOICE$)
+13200  IF SHAMANESSCHOICE$ = "N" OR SHAMANESSCHOICE$ = "NO" THEN PRINT "You refuse to buy a potion and leave." : RETURN
+13210  IF SHAMANESSCHOICE$ <> "Y" AND SHAMANESSCHOICE$ <> "YES" THEN GOTO 13170
+13220  IF GOLD < 300 THEN PRINT "You want to buy the potion, but you don't have enough gold." : RETURN
+13230  GOLD = GOLD - 300
+13240  PRINT "You buy the potion and drink it. It doesn't taste good and it's quite intoxicating."
+13250  PRINT "The orc shamaness tells you she used a moonshine to soak the magic herbs. "
+13260  IF STRENGTH > 19 THEN PRINT "You don't feel any difference. Your strengh is already very high."
+13270  IF STRENGTH = 19 THEN PRINT "You feel slightly stronger." : STRENGTH = STRENGTH + 1
+13280  IF STRENGTH < 19 THEN PRINT "You feel your muscles grow instantly." : STRENGTH = STRENGTH + 2
+13290  IF CHARISMA < 3 THEN PRINT "The charisma-lowering side effect is deadly for you!" : DEATHCAUSE$ = "magic potion poisoning" : GOTO 9800
+13300  CHARISMA = CHARISMA - 2
+13310  PRINT "The side effect of the potion is a change of your apperance."
+13320  PRINT "Your skin is now covered in scars after too fast muscle growth."
+13330  PRINT "You are afraid it will have negative effect on your relations with people."
+13340  PRINT "Your charisma is now lower by 2 points."
+13350  RETURN
+13360  REM
+13370  REM Dice roll 29
+13380  PRINT "You encounter a robbed caravan. The merchant and his people were murdered."
+13390  PRINT "Bandits took almost everything, including horses, but left one wooden chest."
+13400  PRINT "The chest is closed and there is a strange, glowing inscription on the lock."
+13410  PRINT "You suppose it may be a magic lock, possibly with some nasty trap."
+13420  PRINT "Do you want to open the chest?"
+13430  PRINT CHR$(27) + "[38;5;051m[y]" + CHR$(27) + "[38;5;252mes/" + CHR$(27) + "[38;5;051m[n]" + CHR$(27) + "[38;5;252mo ";
+13440  INPUT "", CHESTCHOICE$
+13450  IF CHESTCHOICE$ = "N" OR CHESTCHOICE$ = "NO" THEN PRINT "You decide to not touch the chest." : RETURN
+13460  IF CHESTCHOICE$ <> "Y" AND CHESTCHOICE$ <> "YES" THEN GOTO 13430
+13470  IF MAGES = 1 THEN PRINT "Your mage examines the lock and says it's a simple magic trap." : PRINT "The bandits probably also knew what is this and decided to not take a risk." : PRINT "Your mage casts a spell and the trap is disarmed."
+13480  TRAPDAMAGE = FND(10)
+13490  IF MAGES = 0 THEN PRINT "You carefully try to disarm the trap, but it suddenly explodes!" : PRINT "You lose " + STR$(TRAPDAMAGE) + " HP." : HP = HP - TRAPDAMAGE
+13500  IF HP < 1 THEN DEATHCAUSE$ = "magic trap" : PRINT "Oh no, you die!" : GOTO 9800
+13510  PRINT "You use your lockpicking skills and unlock the chest."
+13520  DICEROLL11 = FND(3) : CHESTGOLD = FND(200) + 50
+13530  IF DICEROLL11 = 1 THEN PRINT "Unfortunately, the chest is empty."
+13540  IF DICEROLL11 = 2 THEN PRINT "You find " + STR$(CHESTGOLD) + " gold pieces inside!" : GOLD = GOLD + CHESTGOLD
+13550  IF DICEROLL11 = 3 THEN PRINT "You open the chest and find a mummy inside. The mummy is hostile!" : ENEMY$ = "mummy" : ENEMYATTACK = 5 : ENEMYHP = 15 : ENEMYEXPERIENCE = 70 : ENEMYGOLD = 0 : GOTO 8450
+13560  RETURN
+13570  REM
+13580  REM Dice roll 30
+13590  IF WORKERS < 2 THEN RETURN
+13600  IF GOLD < WORKERS * 15 THEN RETURN
+13610  PRINT "Your workers demand a higher pay. The want additional 5 gold pieces per person."
+13620  PRINT "Do you want to increase their wages? (cost: " + STR$(5*WORKERS) + " gold pieces)"
+13630  PRINT CHR$(27) + "[38;5;051m[y]" + CHR$(27) + "[38;5;252mes/" + CHR$(27) + "[38;5;051m[n]" + CHR$(27) + "[38;5;252mo ";
+13640  INPUT "", WAGESCHOICE$
+13650  WAGESCHOICE$ = UPS$(WAGESCHOICE$)
+13660  IF WAGESCHOICE$ = "Y" OR WAGESCHOICE$ = "YES" THEN PRINT "You decide to pay additional 5 gold pieces to every worker." : PRINT "Your workers are happy now." : GOLD = GOLD - WORKERS*5 : RETURN
+13670  IF WAGESCHOICE$ <> "N" AND WAGESCHOICE$ <> "NO" THEN GOTO 13630
+13680  PRINT "You refuse to pay them extra money. Your workers are very upset."
+13690  DICEROLL12 = FND(3)
+13700  IF DICEROLL < 3 THEN RETURN
+13710  PRINT "You wake up next day and realize all of your workers are gone!"
+13720  PRINT "The worse, they stole all of your goods!"
+13730  WORKERS = 0
+13740  FOR I = 0 TO 11
+13750  GOODS(I) = 0
+13760  NEXT I
+13770  RETURN
+13780  REM
 10610  PRINT "You find " + STR$(TOODSROLL) + " fresh toods."
 10620  GOODS(4) = GOODS(4) + TOODSROLL
 10630  RETURN
