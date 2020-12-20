@@ -516,7 +516,7 @@
  5720  IF I = 11 THEN PRINT COPPERORE(CURRENTCITY) - INT(COPPERORE(CURRENTCITY)*(0.2 - CHARISMA/100)) - 1
  5730  NEXT I
  5740  PRINT "Do you want to " + CHR$(27) + "[38;5;051m[b]" + CHR$(27) + "[38;5;252muy, " + CHR$(27) + "[38;5;051m[s]" + CHR$(27) + "[38;5;252mell or " + CHR$(27) + "[38;5;051m[e]" + CHR$(27) + "[38;5;252mxit? "
- 5750  INPUT MARKETCHOICE$
+ 5750  INPUT "", MARKETCHOICE$
  5760  MARKETCHOICE$ = UPS$(MARKETCHOICE$)
  5770  IF MARKETCHOICE$ = "B" OR MARKETCHOICE$ = "BUY" THEN GOTO 5820
  5780  IF MARKETCHOICE$ = "S" OR MARKETCHOICE$ = "SELL" THEN GOTO 6340
@@ -553,7 +553,7 @@
  6090  IF GOODSCHOICENR = 11 THEN AFFORDGOODS = INT(GOLD / COPPERORE(CURRENTCITY))
  6100  IF AFFORDGOODS = 0 THEN PRINT "You can't afford to buy it" : GOTO 5740
  6110  PRINT "How many units? You can afford up to " + STR$(AFFORDGOODS) + "."
- 6120  INPUT UNITSCHOICE$
+ 6120  INPUT "", UNITSCHOICE$
  6130  IF VAL(UNITSCHOICE$) < 0 THEN PRINT "No, that's a dumb idea. You can't buy a negative number of goods." : GOTO 6110
  6140  IF VAL(UNITSCHOICE$) = 0 THEN PRINT "You decide against buying anything for the time being." : GOTO 5740
  6150  IF VAL(UNITSCHOICE$) > AFFORDGOODS THEN PRINT "You don't have enough gold to buy " + UNITSCHOICE$ + " units." : GOTO 6110
@@ -591,7 +591,7 @@
  6470  IF GOODSCHOICENR = 13 THEN PRINT "Please enter a valid good's name or number." : GOTO 6350
  6480  IF GOODS(GOODSCHOICENR) = 0 THEN PRINT "You don't have any " + GOODSNAME$(GOODSCHOICENR) + "!": GOTO 5740
  6490  PRINT "How many units you want to sell? You have " + STR$(GOODS(GOODSCHOICENR)) + "."
- 6500  INPUT UNITSCHOICE$
+ 6500  INPUT "", UNITSCHOICE$
  6510  IF VAL(UNITSCHOICE$) < 0 THEN PRINT "No, that's a dumb idea. You can't sell a negative number of goods." : GOTO 6490
  6520  IF VAL(UNITSCHOICE$) = 0 THEN PRINT "You decide to not sell." : GOTO 5740
  6530  IF VAL(UNITSCHOICE$) > GOODS(GOODSCHOICENR) THEN PRINT "That's more than you have!" : GOTO 6490
@@ -935,7 +935,7 @@
  9910  PRINT "          |                 |            "
  9920  PRINT CHR$(27) + "[38;5;040m.........." + CHR$(27) + "[38;5;246m|" + CHR$(27) + "[38;5;040m................." + CHR$(27) + "[38;5;246m|" + CHR$(27) + "[38;5;040m............"
  9930  PRINT CHR$(27) + "[0mPress enter"
- 9940  INPUT DUMPP$
+ 9940  INPUT "", DUMPP$
  9950  END
  9960  REM
  9970  REM Fight with the dragon
