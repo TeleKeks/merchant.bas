@@ -645,7 +645,7 @@
  6440  IF GOODSCHOICE$ = "CO" OR GOODSCHOICE$ = "C" THEN PRINT "A merchant asks you: cotton or copper ore, dear sir?" : GOTO 6470
  6450  IF GOODSCHOICE$ = "F" THEN PRINT "A merchant asks you: fish or furs, dear sir?" : GOTO 6470
  6460  NEXT I
- 6470  IF GOODSCHOICENR = 13 THEN PRINT "Please enter the valid goods name or number." : GOTO 6350
+ 6470  IF GOODSCHOICENR = 13 THEN PRINT "Please enter a valid good's name or number." : GOTO 6350
  6480  IF GOODS(GOODSCHOICENR) = 0 THEN PRINT "You don't have any " + GOODSNAME$(GOODSCHOICENR) + "!": GOTO 5740
  6490  PRINT "How many units you want to sell? You have " + STR$(GOODS(GOODSCHOICENR)) + "."
  6500  INPUT UNITSCHOICE$
@@ -695,7 +695,7 @@
  6940  REM Hiring workers
  6950  IF GOLD < WORKERSPRICE(CURRENTCITY) THEN PRINT "You don't have enough money to hire even one worker!" : GOTO 6730
  6960  IF WORKERS = 50 THEN PRINT "You already employ the maximum number of workers one can employ." : GOTO 6730
- 6970  PRINT "The cost is " + STR$(WORKERSPRICE(CURRENTCITY)) + " gold pieces per employee. How many workers do you want to hire?"
+ 6970  PRINT "The cost is " + STR$(WORKERSPRICE(CURRENTCITY)) + " gold pieces per employee. How many workers would you like to hire?"
  6980  INPUT HOWMANYWORKERS$
  6990  IF VAL(HOWMANYWORKERS$) = 0 THEN PRINT "You decide to not hire anybody." : GOTO 6730
  7000  IF VAL(HOWMANYWORKERS$) < 0 THEN PRINT "Please enter a positive number." : GOTO 6970
