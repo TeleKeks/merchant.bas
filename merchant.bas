@@ -555,7 +555,7 @@
  6110  PRINT "How many units? You can afford up to " + STR$(AFFORDGOODS) + "."
  6120  INPUT UNITSCHOICE$
  6130  IF VAL(UNITSCHOICE$) < 0 THEN PRINT "No, that's a dumb idea. You can't buy a negative number of goods." : GOTO 6110
- 6140  IF VAL(UNITSCHOICE$) = 0 THEN PRINT "You decide against buying anything for the time being." : GOTO 5750
+ 6140  IF VAL(UNITSCHOICE$) = 0 THEN PRINT "You decide against buying anything for the time being." : GOTO 5740
  6150  IF VAL(UNITSCHOICE$) > AFFORDGOODS THEN PRINT "You don't have enough gold to buy " + UNITSCHOICE$ + " units." : GOTO 6110
  6160  IF VAL(UNITSCHOICE$)*GOODSWEIGHT(GOODSCHOICENR) + CAPACITY > MAXCAPACITY THEN PRINT "That's too heavy! You need to hire more workers to carry the goods." : GOTO 6110
  6170  IF VAL(UNITSCHOICE$) > 1 THEN PRINT "You buy " + UNITSCHOICE$ + " units." : GOTO 6200
