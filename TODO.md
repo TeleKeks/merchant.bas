@@ -2,6 +2,8 @@
 
   ##### In no particular order
   
+  Add quit and exit commands
+  
   Add version without map colours
 
   Add more loading dots
