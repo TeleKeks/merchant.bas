@@ -190,7 +190,7 @@
  1900  CITYDESC$(15) = ", a small city famous for its winery."
  1910  CITYDESC$(16) = ", a large, wealthy seaside city."
  1920  CLS
- 1930  PRINT CHR$(27) + "[48;5;232m" + "Loading...";
+ 1930  PRINT CHR$(27) + "[48;5;232m" + "Loading... [" + STRING$(48,".") + "]"; : LOCATE 1, 13
  1940  KEK$ = CHR$(27) + "[48;5;088m" + " " + CHR$(27) + "[48;5;232m"
  1950  DIM MMAP$(48)
  1960  DIM MAP$(48)
@@ -255,6 +255,7 @@
  3120  IF X$ = "D" THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;142m" + X$
  3130  IF X$ = "," THEN MMAP$(I) = MMAP$(I) + CHR$(27) + "[38;5;222m" + "."
  3140  NEXT J
+ 3145  PRINT "#";
  3150  NEXT I
  3160  CLS
  3170  PRINT CHR$(27) + "[38;5;28m" + TAB$(3) + "                     Programmed in TeleBASIC by Keks                  "
